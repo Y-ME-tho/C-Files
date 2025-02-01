@@ -1,0 +1,71 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+	  {
+		"label": "Compile and run (C) - Redirect",
+		"type": "shell",
+		"command": "",
+		"args": [
+		  "copy",
+		  "\"${file}\"",
+		  "${workspaceFolder}\\jspwTest.c",
+		  "&&",
+		  "gcc",
+		  "jspwTest.c",
+		  "-o",
+		  "jspwTest",
+		  "&&",
+		  "jspwTest",
+		  "<",
+		  "input.txt",
+		  ">",
+		  "output.txt",
+		  "&&",
+		  "del",
+		  "jspwTest.exe",
+		  "&&",
+		  "del",
+		  "jspwTest.c"
+		],
+		"presentation": {
+		  "reveal": "never",  // or "always" if you want to see logs
+		  "focus": false
+		},
+		"problemMatcher": []
+	  },
+	  {
+		"label": "Compile and run (C) - Interactive",
+		"type": "shell",
+		"command": "",
+		"args": [
+		  "copy",
+		  "\"${file}\"",
+		  "${workspaceFolder}\\jspwTest.c",
+		  "&&",
+		  "gcc",
+		  "jspwTest.c",
+		  "-o",
+		  "jspwTest",
+		  "&&",
+		  "jspwTest",
+		  "&&",
+		  "del",
+		  "jspwTest.exe",
+		  "&&",
+		  "del",
+		  "jspwTest.c"
+		],
+		"presentation": {
+		  "reveal": "always",
+		  "focus": true,    // 👈 ensures the terminal gets cursor focus
+		  "panel": "shared"
+		},
+		"group": {
+		  "kind": "build",
+		  "isDefault": true
+		},
+		"problemMatcher": []
+	  }
+	]
+  }
+  
